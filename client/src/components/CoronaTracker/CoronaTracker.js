@@ -2,7 +2,7 @@ import React from 'react';
 import { Cards, CountryPicker, Chart } from './components';
 import { fetchData } from './api';
 import './CoronaTracker.css';
-import image from './images/image.png';
+import image from './image.png';
 
 class CoronaTracker extends React.Component {
   state = {
