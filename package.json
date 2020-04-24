@@ -14,8 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "react-router-dom": "^5.1.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
