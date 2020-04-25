@@ -33,12 +33,12 @@ function Home(){
   return (
     <Grid className={styles.home}
       areas={[
-        { name: 'title', start:[0, 0], end: [2,0] },
-        { name: 'nav', start: [0, 1], end: [2, 1] },
-        { name: 'news', start: [0, 2], end: [1, 2] },
-        { name: 'tracker', start: [2, 2], end: [2, 2] },
+        { name: 'title', start:[0, 0], end: [3,0] },
+        { name: 'nav', start: [0, 1], end: [3, 1] },
+        { name: 'news', start: [0, 2], end: [2, 2] },
+        { name: 'tracker', start: [3, 2], end: [3, 2] },
       ]}
-      columns={['full', 'full', 'mdeium']}
+      columns={['auto', 'auto', 'auto','medium']}
       rows={['small','xsmall', 'small']}
       gap='small'
       responsive='true'
@@ -55,7 +55,7 @@ function Home(){
       </Box>
       <Box gridArea='news' className={styles.news}/>
       <Box gridArea='tracker' className={styles.tracker}>
-        <h2>Worldwide CoronaTracker</h2>
+        <h2>Worldwide Coronavirus</h2>
         <Select
           alignSelf="center"
           options={['small', 'medium', 'large']}
