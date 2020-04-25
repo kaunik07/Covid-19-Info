@@ -1,11 +1,13 @@
-body {
+/* body {
     background-color: whitesmoke;
-}
+} */
   
   .container {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: whitesmoke;
+    height: max-content;
   }
   
   .image {
