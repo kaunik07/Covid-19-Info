@@ -38,9 +38,9 @@ function Home(){
         { name: 'news', start: [0, 2], end: [2, 2] },
         { name: 'tracker', start: [3, 2], end: [3, 2] },
       ]}
-      columns={['auto', 'auto', 'auto','medium']}
-      rows={['small','xsmall', 'small']}
-      gap='small'
+      columns={['auto', 'auto', 'large','medium']}
+      rows={['small','xsmall', 'auto']}
+      gap='medium'
       responsive='true'
     >
       <Box gridArea='title' className={styles.title}>

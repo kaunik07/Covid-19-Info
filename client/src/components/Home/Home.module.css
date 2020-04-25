@@ -9,6 +9,7 @@ body{
 .title{
     align-items: center;
     justify-content: center;
+    
 }
 
 .title_header{
@@ -21,6 +22,7 @@ body{
     border-radius: 5px;
     background-color: #34ace0;
     border-color: whitesmoke;
+    box-shadow: 5px 10px 18px #888888;
 
 }
 
@@ -57,12 +59,17 @@ body{
 
 .news{
     background: chartreuse;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #888888;
 }
 
 .tracker{
+    padding: 10px;
     text-align: center;
     justify-content: center;
-    background: #ffb142
+    background: #ffb142;
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #888888;
 }
 
 .logo {
