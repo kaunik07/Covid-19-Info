@@ -12,7 +12,6 @@ const Countries = ({ handleCountryChange }) => {
     const fetchAPI = async () => {
       setCountries(await fetchCountries());
     };
-
     fetchAPI();
   }, []);
 

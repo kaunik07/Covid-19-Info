@@ -58,9 +58,13 @@ body{
 }
 
 .news{
-    background: chartreuse;
     border-radius: 5px;
     box-shadow: 5px 10px 18px #888888;
+}
+
+.hellotracker {
+    height: 100%;
+    width: 100%;
 }
 
 .tracker{
