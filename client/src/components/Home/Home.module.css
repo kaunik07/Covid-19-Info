@@ -17,6 +17,13 @@ body{
     color: #ff793f;
 }
 
+.photo{
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    /* height: fit-content; */
+}
+
 .nav{
     justify-content: center;
     border-radius: 5px;

@@ -1,30 +1,30 @@
-import React from "react";
+import React, { Component } from 'react';
+import './News.css';
+import Search from './Search.js';
+import './Search.css';
+import Footer from './Footer.js';
+import './Footer.css';
+import news from './images/news.png';
 
-import { Anchor, Box, Grommet, Header } from "grommet";
-import { grommet } from "grommet/themes";
+class App extends Component {
+  render() {
+    return (
+      <div className="app">
+        <div className="appHeader">
+          <img className="scriptLogo" src={news} alt="React Logo" />
 
-export const Avatar = ({ ...rest }) => (
-  <Box
-    height="xxsmall"
-    width="xxsmall"
-    round="full"
-    background="url(//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80)"
-    {...rest}
-  />
-);
+          <div className="title">
+            <h1>COVID-NEWS</h1>
+            
+          </div>
 
-function News(){
-    return(
-        <Grommet theme={grommet}>
-            <Header background="light-4" pad="small">
-            <Avatar />
-            <Box direction="row" gap="medium">
-                <Anchor label="Home" href="#" />
-                <Anchor label="Profile" href="#" />
-            </Box>
-            </Header>
-        </Grommet>
-    )
+          <img className="scriptLogo" src={news} alt="Javascript Logo" />
+        </div>
+        <Search default="bbc-news" />
+        <Footer />
+      </div>
+    );
+  }
 }
 
-export default News;
+export default App;

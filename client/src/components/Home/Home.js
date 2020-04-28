@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import {Link } from 'react-router-dom';
 import logo from './coronavirus.png';
-import { Box,Grid,Select } from "grommet";
+import { Box,Grid,Image,Carousel } from "grommet";
 // import {fetchCountries , fetchData} from '../CoronaTracker/api'
 import { fetchCountries, fetchData, fetchDailyData } from '../CoronaTracker/api';
 import styles from './Home.module.css';
@@ -44,18 +44,24 @@ function Home(){
   return (
     <Grid className={styles.home}
       areas={[
-        { name: 'title', start:[0, 0], end: [3,0] },
-        { name: 'nav', start: [0, 1], end: [3, 1] },
-        { name: 'news', start: [0, 2], end: [2, 3] },
-        { name: 'tracker', start: [3, 2], end: [3, 2] },
+        { name: 'title', start:[0, 0], end: [0,0] },
+        {name: 'photos', start:[0,1], end: [0,1] },
+        { name: 'nav', start: [0, 2], end: [0, 2] },
+        { name: 'tracker', start: [0, 3], end: [0, 3] },
       ]}
-      columns={['auto', 'auto', 'large','medium']}
-      rows={['small','xsmall', 'small','auto']}
+      columns={['fit']}
+      rows={['small','medium','xsmall', 'auto']}
       gap='medium'
       responsive={true}
     >
       <Box gridArea='title' className={styles.title}>
         <h1 className={styles.title_header}>C<img src={logo} className={styles.logo} alt="coronavirus"/>VID-19</h1>
+      </Box>
+      <Box className={styles.photo} overflow="hidden">
+        <Carousel fill play="2000" alignSelf="center">
+          <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
+        </Carousel>
       </Box>
       <Box gridArea='nav' className={styles.nav}>
         <ul>
@@ -64,24 +70,8 @@ function Home(){
           ))}
         </ul>
       </Box>
-      <Box gridArea='news' className={styles.news}>
+      <Box gridArea='tracker' height="720" className={styles.news}>
         <iframe classname={styles.hellotracker} height="1024" src="https://app.developer.here.com/coronavirus/" frameborder="0"></iframe>
-      </Box>
-      <Box gridArea='tracker' className={styles.tracker}>
-        <h2>Worldwide Coronavirus</h2>
-        <Select
-          alignSelf="center"
-          options={countries}
-          value={country}
-          closeOnChange={true}
-          onChange={({ option }) => setCountry(option)}
-          onClose={handleCountryChange}
-        />
-        {/* {dataCountry.length > 0 &&
-          <h2>
-            You have {dataCountry.length} unread messages.
-          </h2>
-        } */}
       </Box>
     </Grid>
   )
