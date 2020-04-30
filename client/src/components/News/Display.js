@@ -36,8 +36,6 @@ class Display extends Component {
   }
 
   getArticles(url) {
-    const apiKey = process.env.REACT_APP_API_KEY;
-    // Make HTTP reques with Axios
     axios
       .get(`http://newsapi.org/v2/everything?domains=who.int&language=en&apiKey=7530f36a6fcf4ecda75ab4eb1213a9ee`)
       .then(res => {
