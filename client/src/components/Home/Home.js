@@ -1,79 +1,49 @@
-import React, { useState, useEffect, Component } from 'react';
+import React from 'react';
 import {Link } from 'react-router-dom';
+import './Home.css';
 import logo from './coronavirus.png';
-import { Box,Grid,Image,Carousel } from "grommet";
-// import {fetchCountries , fetchData} from '../CoronaTracker/api'
-import { fetchCountries, fetchData, fetchDailyData } from '../CoronaTracker/api';
-import styles from './Home.module.css';
-
-const items = [
-  { label: "Home", href: "/" },
-  { label: "News", href: "/News" },
-  { label: "Tracker", href: "/CoronaTracker" },
-];
 
 function Home(){
-  // const [value, setValue] = React.useState('medium');
-  const [countries, setCountries] = useState([]);
-  const [country ,setCountry] = useState('Global');
-  const [dailyData, setDailyData] = useState(['0 ']);
-  const [dataCountry, setData] = useState([]);
-
-  // console.log(dailyData)
-
-  const handleCountryChange = async (country) => {
-    const data = await fetchData(country);
-    setData(data);
-  };
-
-  const fetchMyAPI = async () => {
-    const initialDailyData = await fetchDailyData();
-    setDailyData(initialDailyData);
-  };
-
-  const fetchAPI = async () => {
-    setCountries(await fetchCountries());
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  },[]);
-
-  console.log(dataCountry)
-
   return (
-    <Grid className={styles.home}
-      areas={[
-        { name: 'title', start:[0, 0], end: [0,0] },
-        {name: 'photos', start:[0,1], end: [0,1] },
-        { name: 'nav', start: [0, 2], end: [0, 2] },
-        { name: 'tracker', start: [0, 3], end: [0, 3] },
-      ]}
-      columns={['fit']}
-      rows={['small','medium','xsmall', 'auto']}
-      gap='medium'
-      responsive={true}
-    >
-      <Box gridArea='title' className={styles.title}>
-        <h1 className={styles.title_header}>C<img src={logo} className={styles.logo} alt="coronavirus"/>VID-19</h1>
-      </Box>
-      <Box className={styles.photo} overflow="hidden">
-        <Carousel fill play="2000" alignSelf="center">
-          <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
-          <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
-        </Carousel>
-      </Box>
-      <Box gridArea='nav' className={styles.nav}>
-        <ul>
-          {items.map(item => (
-            <li><Link className={styles.navlinks} to={item.href}>{item.label}</Link></li>
-          ))}
-        </ul>
-      </Box>
-      <Box gridArea='tracker' height="720" className={styles.news}>
-        <iframe classname={styles.hellotracker} height="1024" src="https://app.developer.here.com/coronavirus/" frameborder="0"></iframe>
-      </Box>
-    </Grid>
+    <div className="w3-black">
+      <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+      <Link to="/Home" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+      </Link>
+      <Link to="/News" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-newspaper-o w3-xxlarge"></i>
+        <p>NEWS</p>
+      </Link>
+      <Link to="/CoronaTracker" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-globe w3-xxlarge"></i>
+        <p>TRACKER</p>
+      </Link>
+    </nav>
+
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+      <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <Link to="/Home" class="w3-bar-item w3-button" style={{width:"15%" }}>HOME</Link>
+        <Link to="/News" class="w3-bar-item w3-button" style={{width:"15%" }}>NEWS</Link>
+        <Link to="/CoronaTracker" class="w3-bar-item w3-button" style={{width:"15%" }}>TRACKER</Link>
+      </div>
+    </div>
+
+    <div class="w3-padding-large" id="main">
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+          <h1 class="w3-jumbo"><span class="w3-hide-small">Covid-19 </span>Info</h1>
+          <h3>Stay home!! Stay Safe!!</h3>
+          <img src={logo} alt="logo" class="w3-image" width="350" height="250"/>
+        </header>
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+          <iframe className="responsiveIframe" src="https://app.developer.here.com/coronavirus/" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
   )
 }
+
 export default Home;
+
+
+

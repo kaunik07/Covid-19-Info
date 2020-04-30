@@ -1,13 +1,21 @@
 /* body {
     background-color: whitesmoke;
 } */
-  
+
+.w3-row-padding img {margin-bottom: 12px}
+.w3-sidebar {width: 120px;background: #222;}
+
+  p{
+    color: white;
+  }  
+
   .container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: white;
     height: max-content;
+    margin-left: 120px;
   }
   
   .image {
@@ -15,7 +23,7 @@
     margin-top: 50px;
   }
   
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 800px) {
     .container {
       margin: 0 10%;
     }

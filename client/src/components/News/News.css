@@ -14,13 +14,27 @@ a {
   font-family: 'Libre Baskerville', 'Merriweather', serif;
 }
 
+p{
+  color: white;
+}
+
+.newsdes{
+  color: #555;
+}
+
 .title h1 {
   font-size: 1.7em;
 }
 
 .app {
   text-align: center;
+  margin-left: 120px;
 }
+
+.w3-row-padding img {margin-bottom: 12px}
+.w3-sidebar {width: 120px;background: #222;}
+
+@media only screen and (max-width: 600px) {.app {margin-left: 0}}
 
 a {
   color: black;
